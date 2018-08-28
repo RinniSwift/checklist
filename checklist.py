@@ -32,7 +32,7 @@ def list_all_items():
 		index += 1
 
 def mark_completed(index):
-	update(index, "{} {}".format("/", checklist[index]))
+	update(int(index), "{} {}".format("/", checklist[int(index)]))
 
 
 
@@ -49,6 +49,10 @@ def select(function_code):
 	elif function_code == "P":
 		list_all_items()
 
+	elif function_code == "S":
+		check_it_off = input("Input completed item's index: ")
+		mark_completed(check_it_off)
+
 	elif function_code == "Q":
 		return False
 
@@ -64,21 +68,21 @@ def user_input(prompt):
 
 running = True
 while running:
-	selection = user_input("Press C to add to list, R to Read from list, P to display list, and Q to quit: ")
+	selection = user_input("Press C to add to list, R to Read from list, P to display list, S to check off items in lists, and Q to quit: ")
 	running = select(selection)
 
 
-def test():
-	create("Hello World")
-	create("yoooo")
+# def test():
+# 	create("Hello World")
+# 	create("yoooo")
 
-	print(checklist)
-	mark_completed(0)
-	list_all_items()
+# 	print(checklist)
+# 	mark_completed(0)
+# 	list_all_items()
 
 
 
-test()
+# test()
 
 # def tests():
 	# create("purple sox")
