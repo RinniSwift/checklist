@@ -28,10 +28,11 @@ def destroy(index):
 def list_all_items():
 	index = 0
 	for list_item in checklist:
-		print(str(index) + " " + list_item)
+		print("{}".format(list_item))
 		index += 1
 
-# def mark_completed(index):
+def mark_completed(index):
+	update(index, "{} {}".format("/", checklist[index]))
 
 
 
@@ -67,8 +68,17 @@ while running:
 	running = select(selection)
 
 
+def test():
+	create("Hello World")
+	create("yoooo")
+
+	print(checklist)
+	mark_completed(0)
+	list_all_items()
 
 
+
+test()
 
 # def tests():
 	# create("purple sox")
